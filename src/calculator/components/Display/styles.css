@@ -1,0 +1,10 @@
+.Display {
+  background: #1c191c;
+  color: white;
+  padding: 1em;
+}
+
+.Display-data {
+  font-size: 2em;
+  text-align: end;
+}

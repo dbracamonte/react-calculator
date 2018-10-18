@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './styles.css'
 
-class Display extends Component {
-  render() {
-    return (
-      <div className="Display">
-        <div className="Display-data">0</div>
-      </div>
-    )
-  }
-}
+const Display = props =>  (
+  <div className="Display">
+    <div className="Display-data">{props.displayData}</div>
+  </div>
+)
 
 export default Display;

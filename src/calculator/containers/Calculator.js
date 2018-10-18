@@ -6,10 +6,8 @@ import Operators from '../components/Operators';
 import './styles.css';
 
 class Calulator extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
+  state = {
+    displayData: '0',
   }
 
   handleClick(e) {
@@ -20,7 +18,9 @@ class Calulator extends Component {
     return (
       <div className="Container">
         <div className="Container-display">
-          <Display />
+          <Display
+            displayData={this.state.displayData}
+          />
         </div>
         <div className="Container-reset">
           <Reset

@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './styles.css'
 
-class Reset extends Component {
-  render() {
-    return (
-      <div className="Reset">
-        <button
-          className="Btn-reset"
-          value="reset"
-          onClick={this.props.handleClick}>
-          Reset
-        </button>
-      </div> 
-    )
-  }
-}
+const Reset = props => (
+  <div className="Reset">
+    <button
+      className="Btn-reset"
+      value="reset"
+      onClick={props.handleClick}>
+      Reset
+    </button>
+  </div> 
+)
 
 export default Reset;

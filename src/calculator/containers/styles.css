@@ -1,0 +1,36 @@
+.Container-display {
+  grid-area: display;
+}
+
+.Container-numbers {
+  grid-area: numbers;
+}
+
+.Container-operators {
+  grid-area: operators;
+}
+
+.Container-reset {
+  grid-area: reset;
+}
+
+.Container {
+  display: grid;
+  width: 340px;
+  margin: auto;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "display display display"
+    "reset reset operators"
+    "numbers numbers operators";
+}
+
+.Container-display,
+.Container-reset,
+.Container-numbers,
+.Container-operators {
+  background-color: #444;
+  border-radius: 5px;
+  padding: 20px;
+}

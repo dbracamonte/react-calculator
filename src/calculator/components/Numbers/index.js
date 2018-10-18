@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './styles.css';
 
-class Numbers extends Component {
-  render() {
-    const numbers = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "."];
-    return (
-      <div className="Numbers">
-        {numbers.map(item =>
-          <button
-            className="Btn-number"
-            key={item}
-            value={item}
-            onClick={this.props.handleClick}>
-            {item}
-          </button>
-        )}
-      </div> 
-    )
-  }
-}
+const numbers = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "."];
+
+const Numbers = props => (
+  <div className="Numbers">
+    {numbers.map(item =>
+      <button
+        className="Btn-number"
+        key={item}
+        value={item}
+        onClick={props.handleClick}>
+        {item}
+      </button>
+    )}
+  </div> 
+)
 
 export default Numbers;

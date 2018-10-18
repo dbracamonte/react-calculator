@@ -1,0 +1,18 @@
+.Numbers {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* .Btn-number {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+
+} */
+
+.Btn-number[value="0"] {
+  grid-column: 1 / 3;
+}
