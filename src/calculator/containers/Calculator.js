@@ -9,11 +9,40 @@ import './styles.css';
 class Calulator extends Component {
   state = {
     displayData: '0',
-    history: ['12-12', '34*12', '64-50', '12-12', '34*12']
+    history: []
   }
 
-  handleClick(e) {
-    console.log(e.target.value)
+  clearDisplay = () => {
+    this.setState({
+      displayData: '0'
+    })
+  }
+
+  isFloat = n => Number(n) === n && n % 1 !== 0;
+
+  handleClick = (e) => {
+    const data = e.target.value
+    const { displayData, history } = this.state
+
+    if(data !== '=') {
+      displayData === '0' ?
+        this.setState({ displayData: data }) :
+        this.setState({ displayData: displayData + data })
+    } else {
+
+      let calResult = eval(displayData);
+      calResult = this.isFloat(calResult) ? calResult.toFixed(2) : calResult;
+
+      const calHistory = `${displayData}=${calResult}`;
+      
+      let arrayHistory = [...history, calHistory];
+      arrayHistory = arrayHistory.length > 5 ? arrayHistory.splice(1) : arrayHistory;
+
+      this.setState({
+        displayData: calResult,
+        history: arrayHistory
+      })
+    }
   }
 
   render() {
@@ -26,7 +55,7 @@ class Calulator extends Component {
         </div>
         <div className="Container-reset">
           <Reset
-            handleClick={this.handleClick}
+            handleClick={this.clearDisplay}
           />
         </div>
         <div className="Container-numbers">
