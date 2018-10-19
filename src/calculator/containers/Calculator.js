@@ -3,11 +3,13 @@ import Display from '../components/Display';
 import Reset from '../components/Reset';
 import Numbers from '../components/Numbers';
 import Operators from '../components/Operators';
+import History from '../components/History'
 import './styles.css';
 
 class Calulator extends Component {
   state = {
     displayData: '0',
+    history: ['12-12', '34*12', '64-50', '12-12', '34*12']
   }
 
   handleClick(e) {
@@ -37,6 +39,13 @@ class Calulator extends Component {
             handleClick={this.handleClick}
           />
         </div>
+        {this.state.history.length > 0 &&
+          <div className="Container-history">
+            <History
+              data={this.state.history}
+            />
+          </div>
+        }        
       </div>
     )
   }

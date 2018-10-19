@@ -14,22 +14,27 @@
   grid-area: reset;
 }
 
+.Container-history {
+  grid-area: history;
+}
+
 .Container {
   display: grid;
-  width: 340px;
+  width: 380px;
   margin: auto;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "display display display"
-    "reset reset operators"
-    "numbers numbers operators";
+    "display display display ."
+    "reset reset operators history"
+    "numbers numbers operators history";
 }
 
 .Container-display,
 .Container-reset,
 .Container-numbers,
-.Container-operators {
+.Container-operators,
+.Container-history {
   background-color: #444;
   border-radius: 5px;
   padding: 20px;
